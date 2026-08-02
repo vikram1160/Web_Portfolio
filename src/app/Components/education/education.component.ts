@@ -37,6 +37,7 @@ export class EducationComponent {
     },
     {
       year: '2023',
+      duration: '3 years',
       degree: 'BSC',
       percentage: '63%',
       institution: 'Shivaji College Kannad',

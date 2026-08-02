@@ -1,1 +1,63 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global theme: black background, white text, red accents */
+:root {
+  --bg: #1e2126;
+  --bg-elevated: #282828;
+  --text: #ffffff;
+  --text-muted: #c8c8c8;
+  --accent: #db3d44;
+  --accent-hover: #c23239;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Shared page shell */
+.page-shell {
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: calc(100vh - 120px);
+}
+
+.page-title {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.page-subtitle {
+  color: var(--text-muted);
+}
+
+.text-accent {
+  color: var(--accent) !important;
+}
+
+/* Themed cards (projects) */
+.theme-card {
+  background-color: var(--bg-elevated);
+  border: 1px solid rgba(219, 61, 68, 0.35);
+  color: var(--text);
+}
+
+.theme-card .card-title {
+  color: var(--accent);
+}
+
+.theme-card .card-text {
+  color: var(--text);
+}
+
+/* Footer */
+.theme-footer {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+  border-top: 1px solid rgba(219, 61, 68, 0.35);
+}

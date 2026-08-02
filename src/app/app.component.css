@@ -1,7 +1,15 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg, #1e2126);
+  color: var(--text, #ffffff);
+}
+
 .container-fluid {
   display: flex;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
 .my-info {

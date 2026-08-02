@@ -1,27 +1,26 @@
-<nav  class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="/home">Vikram</a>
-    <button  class="navbar-toggler" (click)="toggleNavbar()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
-      <span class="navbar-toggler-icon"></span>  
+    <button class="navbar-toggler" (click)="toggleNavbar()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div
-    class="collapse navbar-collapse"
-    [ngClass]="{ show: showNavbar }"
-    id="navbarSupportedContent"
-  >
+      class="collapse navbar-collapse"
+      [ngClass]="{ show: showNavbar }"
+      id="navbarSupportedContent"
+    >
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="" (click)="toggleNavbar()">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"routerLink="/education" (click)="toggleNavbar()">Education</a>
+          <a class="nav-link" routerLink="/education" (click)="toggleNavbar()">Education</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"routerLink="/techno" (click)="toggleNavbar()">Technologies</a>
+          <a class="nav-link" routerLink="/techno" (click)="toggleNavbar()">Technologies</a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link"routerLink="/pro" (click)="toggleNavbar()">Projects</a>
+          <a class="nav-link" routerLink="/pro" (click)="toggleNavbar()">Projects</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
