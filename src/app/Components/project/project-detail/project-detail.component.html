@@ -1,0 +1,49 @@
+<section class="page-shell project-detail" *ngIf="project as p">
+  <div class="detail-inner">
+    <a routerLink="/pro" class="back-link">← Back to Projects</a>
+
+    <header class="detail-header">
+      <p class="detail-eyebrow" *ngIf="p.role">{{ p.role }}</p>
+      <h1 class="detail-title">{{ p.title }}</h1>
+      <p class="detail-lead">{{ p.shortDescription }}</p>
+    </header>
+
+    <article class="detail-section">
+      <h2>Purpose</h2>
+      <p>{{ p.overview }}</p>
+    </article>
+
+    <article class="detail-section" *ngIf="p.usedFor">
+      <h2>What It’s Used For</h2>
+      <p>{{ p.usedFor }}</p>
+    </article>
+
+    <article class="detail-section">
+      <h2>Key Features</h2>
+      <ul class="feature-list">
+        <li *ngFor="let feature of p.features">
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.description }}</p>
+        </li>
+      </ul>
+    </article>
+
+    <article class="detail-section">
+      <h2>Tech Stack</h2>
+      <ul class="tech-list">
+        <li *ngFor="let tech of p.techStack">{{ tech }}</li>
+      </ul>
+    </article>
+
+    <article class="detail-section" *ngIf="p.impact?.length">
+      <h2>Impact</h2>
+      <ul class="impact-list">
+        <li *ngFor="let item of p.impact">{{ item }}</li>
+      </ul>
+    </article>
+
+    <div class="detail-actions">
+      <a routerLink="/pro" class="btn btn-outline-danger">Back to Projects</a>
+    </div>
+  </div>
+</section>

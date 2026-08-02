@@ -1,32 +1,46 @@
+:host {
+  display: block;
+}
+
 .skills-page {
   display: flex;
   justify-content: center;
-  padding: 3rem 1.25rem 4rem;
+  padding: 2rem 1rem 3rem;
+  box-sizing: border-box;
 }
 
 .skills-inner {
   width: 100%;
   max-width: 720px;
+  margin: 0 auto;
+}
+
+.skills-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: clamp(1.5rem, 4vw, 2.25rem) clamp(1.15rem, 3vw, 2rem);
+  box-sizing: border-box;
 }
 
 .skills-header {
   text-align: center;
-  margin-bottom: 2.75rem;
+  margin-bottom: 2rem;
 }
 
 .skills-title {
-  margin: 0 0 0.5rem;
-  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin: 0 0 0.45rem;
+  font-size: clamp(1.85rem, 4vw, 2.4rem);
   font-weight: 700;
-  color: var(--accent, #db3d44);
+  color: var(--accent);
   letter-spacing: -0.02em;
 }
 
 .skills-subtitle {
   margin: 0 auto;
   max-width: 28rem;
-  color: var(--text-muted, #c8c8c8);
-  font-size: 1.05rem;
+  color: var(--text-muted);
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -36,63 +50,76 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.5rem;
 }
 
 .skill-meta {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 0.55rem;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .skill-name {
-  color: var(--text, #ffffff);
-  font-size: 1rem;
+  color: var(--text);
+  font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .skill-percent {
-  color: var(--accent, #db3d44);
-  font-size: 0.95rem;
+  color: var(--accent);
+  font-size: 0.92rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
 }
 
 .skill-track {
   height: 10px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--skill-track);
   border-radius: 999px;
   overflow: hidden;
 }
 
 .skill-fill {
   height: 100%;
-  width: 0;
-  background: linear-gradient(90deg, #a8282e 0%, #db3d44 55%, #f05a60 100%);
+  background: linear-gradient(
+    90deg,
+    var(--skill-fill-start) 0%,
+    var(--skill-fill-mid) 55%,
+    var(--skill-fill-end) 100%
+  );
   border-radius: 999px;
   animation: skillFill 1.2s ease-out forwards;
+  transform-origin: left center;
 }
 
 @keyframes skillFill {
   from {
     transform: scaleX(0);
-    transform-origin: left center;
   }
   to {
     transform: scaleX(1);
-    transform-origin: left center;
   }
 }
 
 @media (max-width: 575px) {
   .skills-page {
-    padding: 2rem 1rem 3rem;
+    padding: 1.5rem 0.85rem 2.5rem;
+  }
+
+  .skills-card {
+    padding: 1.25rem 1rem;
   }
 
   .skills-list {
-    gap: 1.4rem;
+    gap: 1.25rem;
+  }
+
+  .skills-subtitle {
+    font-size: 0.92rem;
   }
 }

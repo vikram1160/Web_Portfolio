@@ -1,11 +1,44 @@
-/* Global theme: black background, white text, red accents */
-:root {
+/* Dark theme (default) — current black / white / red */
+:root,
+[data-theme="dark"] {
   --bg: #1e2126;
   --bg-elevated: #282828;
   --text: #ffffff;
   --text-muted: #c8c8c8;
   --accent: #db3d44;
   --accent-hover: #c23239;
+  --border: rgba(219, 61, 68, 0.4);
+  --btn-bg: #db3d44;
+  --btn-text: #ffffff;
+  --btn-outline: #db3d44;
+  --skill-fill-start: #a8282e;
+  --skill-fill-mid: #db3d44;
+  --skill-fill-end: #f05a60;
+  --skill-track: rgba(255, 255, 255, 0.08);
+  --highlight: #db3d44;
+  --chip-bg: rgba(219, 61, 68, 0.12);
+}
+
+/* Light theme — white & yellow accents, black & white text */
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-elevated: #fff8dc;
+  --text: #111111;
+  --text-muted: #333333;
+  --accent: #111111;
+  --accent-hover: #000000;
+  --border: rgba(230, 184, 0, 0.4);
+  --btn-bg: #ffe566;
+  --btn-text: #111111;
+  --btn-outline: #111111;
+  --yellow: #ffe566;
+  --yellow-border: #e6b800;
+  --skill-fill-start: #e6b800;
+  --skill-fill-mid: #f5c518;
+  --skill-fill-end: #ffd84d;
+  --skill-track: rgba(0, 0, 0, 0.1);
+  --highlight: #f5c518;
+  --chip-bg: #ffe566;
 }
 
 html,
@@ -18,6 +51,7 @@ body {
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Shared page shell */
@@ -40,10 +74,10 @@ body {
   color: var(--accent) !important;
 }
 
-/* Themed cards (projects) */
+/* Themed cards */
 .theme-card {
   background-color: var(--bg-elevated);
-  border: 1px solid rgba(219, 61, 68, 0.35);
+  border: 1px solid var(--border);
   color: var(--text);
 }
 
@@ -55,9 +89,86 @@ body {
   color: var(--text);
 }
 
+/* Theme-aware buttons (keep Bootstrap btn classes / layout) */
+.btn-danger {
+  background-color: var(--btn-bg) !important;
+  border-color: var(--btn-bg) !important;
+  color: var(--btn-text) !important;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+  background-color: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+  color: var(--btn-text) !important;
+}
+
+[data-theme="light"] .btn-danger:hover,
+[data-theme="light"] .btn-danger:focus {
+  background-color: #ffd84d !important;
+  border-color: #d4a800 !important;
+  color: #111111 !important;
+}
+
+.btn-outline-danger {
+  background-color: transparent !important;
+  border-color: var(--btn-outline) !important;
+  color: var(--btn-outline) !important;
+}
+
+.btn-outline-danger:hover,
+.btn-outline-danger:focus {
+  background-color: var(--btn-bg) !important;
+  border-color: var(--btn-bg) !important;
+  color: var(--btn-text) !important;
+}
+
+[data-theme="light"] .btn-outline-danger:hover,
+[data-theme="light"] .btn-outline-danger:focus {
+  background-color: var(--yellow) !important;
+  border-color: var(--yellow-border) !important;
+  color: #111111 !important;
+}
+
 /* Footer */
 .theme-footer {
   background-color: var(--bg) !important;
   color: var(--text) !important;
-  border-top: 1px solid rgba(219, 61, 68, 0.35);
+  border-top: 1px solid var(--border);
+}
+
+/* Theme toggle button in navbar */
+.theme-toggle-btn {
+  white-space: nowrap;
+}
+
+/* Dark theme: Switch Theme — red text; hover red bg + white text */
+[data-theme="dark"] .theme-toggle-btn {
+  background-color: transparent !important;
+  border-color: #db3d44 !important;
+  color: #db3d44 !important;
+}
+
+[data-theme="dark"] .theme-toggle-btn:hover,
+[data-theme="dark"] .theme-toggle-btn:focus {
+  background-color: #db3d44 !important;
+  border-color: #db3d44 !important;
+  color: #ffffff !important;
+}
+
+/* Light theme: only Switch Theme + Connect on WhatsApp are yellow */
+[data-theme="light"] .theme-toggle-btn,
+[data-theme="light"] .btn-cta {
+  background-color: var(--yellow) !important;
+  border-color: var(--yellow-border) !important;
+  color: #111111 !important;
+}
+
+[data-theme="light"] .theme-toggle-btn:hover,
+[data-theme="light"] .theme-toggle-btn:focus,
+[data-theme="light"] .btn-cta:hover,
+[data-theme="light"] .btn-cta:focus {
+  background-color: #ffd84d !important;
+  border-color: #d4a800 !important;
+  color: #111111 !important;
 }

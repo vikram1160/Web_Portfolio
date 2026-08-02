@@ -1,18 +1,135 @@
-.container {
-  max-width: 1200px;
+:host {
+  display: block;
 }
 
-.img {
-  max-width: 150px;
-  margin: auto;
+.edu-page {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem 3rem;
+  box-sizing: border-box;
 }
 
-h2,
-h5 {
-  margin: 0;
+.edu-inner {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-p {
-  font-size: 1.2rem;
+.edu-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.edu-title {
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+  font-size: clamp(1.85rem, 4vw, 2.5rem);
+  font-weight: 700;
+}
+
+.edu-subtitle {
+  margin: 0 auto;
+  max-width: 32rem;
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  font-style: italic;
   line-height: 1.5;
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.edu-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1.25rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.edu-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+  margin-bottom: 0.9rem;
+  display: block;
+  background: var(--bg);
+}
+
+.edu-year {
+  margin: 0 0 0.3rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.edu-degree {
+  margin: 0 0 0.25rem;
+  color: var(--text);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.edu-school {
+  margin: 0 0 0.4rem;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.edu-meta {
+  margin: 0 0 0.55rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.edu-desc {
+  margin: 0;
+  max-width: 36rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+@media (min-width: 700px) {
+  .edu-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.35rem;
+  }
+
+  .edu-card {
+    padding: 1.6rem 1.4rem;
+    min-height: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .edu-page {
+    padding: 1.5rem 0.85rem 2.5rem;
+  }
+
+  .edu-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .edu-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .edu-desc {
+    font-size: 0.9rem;
+  }
 }

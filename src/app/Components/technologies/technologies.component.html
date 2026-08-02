@@ -1,26 +1,31 @@
 <section class="skills-page page-shell">
   <div class="skills-inner">
-    <header class="skills-header">
-      <h1 class="skills-title">My Skills</h1>
-      <p class="skills-subtitle">
-        <!-- Technologies I use to build clean, responsive web experiences. -->
-      </p>
-    </header>
+    <article class="skills-card">
+      <header class="skills-header">
+        <h1 class="skills-title">My Skills</h1>
+        <p class="skills-subtitle">
+          Technologies I use to build clean, responsive web experiences.
+        </p>
+      </header>
 
-    <ul class="skills-list">
-      <li class="skill-item" *ngFor="let skill of skills">
-        <div class="skill-meta">
-          <span class="skill-name">{{ skill.name }}</span>
-          <span class="skill-percent">{{ skill.percentage }}%</span>
-        </div>
-        <div class="skill-track" role="progressbar"
-             [attr.aria-valuenow]="skill.percentage"
-             aria-valuemin="0"
-             aria-valuemax="100"
-             [attr.aria-label]="skill.name">
-          <div class="skill-fill" [style.width.%]="skill.percentage"></div>
-        </div>
-      </li>
-    </ul>
+      <ul class="skills-list">
+        <li class="skill-item" *ngFor="let skill of skills">
+          <div class="skill-meta">
+            <span class="skill-name">{{ skill.name }}</span>
+            <span class="skill-percent">{{ skill.percentage }}%</span>
+          </div>
+          <div
+            class="skill-track"
+            role="progressbar"
+            [attr.aria-valuenow]="skill.percentage"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            [attr.aria-label]="skill.name"
+          >
+            <div class="skill-fill" [style.width.%]="skill.percentage"></div>
+          </div>
+        </li>
+      </ul>
+    </article>
   </div>
 </section>
